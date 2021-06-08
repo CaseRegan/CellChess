@@ -48,7 +48,10 @@ function getUser($uname) {
 	$row = mysqli_fetch_assoc($result);
 	$user->id = intval($row["id"]);
 	$user->uname = $uname;
-	$user->curgame = intval($row["curgame"]);
+	if ($row["curgame"] === null)
+		$user->curgame = -1;
+	else
+		$user->curgame = intval($row["curgame"]);
 	return $user;
 }
 

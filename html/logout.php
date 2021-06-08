@@ -4,7 +4,7 @@ session_start();
 
 session_destroy();
 
-header("Location: http://proj.cellchess.com");
+header("Location: index.php");
 exit();
 
 ?>

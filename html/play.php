@@ -13,7 +13,7 @@ $need_refresh = 0;
 
 if ($_GET["gid"]) {
 	$gid = $_GET["gid"];
-} 
+}
 
 if ($gid < 0) {
 	$gid = getUser($_SESSION["uname"])->curgame;
@@ -34,7 +34,8 @@ if ($gid < 0) {
 	<?php
 
 	if ($need_refresh) {
-		echo "<script>window.location.href = \"play.php?gid=$gid\"</script>";
+		header("Location: play.php?gid=$gid");
+		//echo "<script>window.location.href = \"play.php?gid=$gid\"</script>";
 	}
 
 	?>
@@ -48,7 +49,7 @@ if ($gid < 0) {
 		board.addEventListener("mousedown", boardOnClick);
 	</script>
 	<br>
-	<button onclick="window.location.href='/index.php'">Home</button>
+	<button onclick="window.location.href='index.php'">Home</button>
 	<button onclick="killGame()">End Game</button>
 </body>
 </html>

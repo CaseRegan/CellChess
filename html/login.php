@@ -33,7 +33,7 @@ mysqli_close($conn);
 if ($row) {
 	echo "Logged in as " . $row["username"] . ".<br>";
 	$_SESSION["uname"] = $uname;
-	header("Location: http://proj.cellchess.com");
+	header("Location: index.php");
 	exit();
 } else {
 	echo "Error or no results.";
